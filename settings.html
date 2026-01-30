@@ -155,9 +155,9 @@
           Open a website in an about:blank page, or use a kbsigmaboy67/NextVG_OS hack tool.
           <a href="" id="macvgabout" style="color: var(--link)"
             >Open MacVG in about:blank</a
-          ><br><a href="" onclick="opnmacblob()" style="color: var(--link)"
+          ><br><p>NextVG:</p><a href="" onclick="opnmacblob()" style="color: var(--link)"
             >Open MacVG in blob</a
-          ><script>function opnmacblob() { const htmlcontb = `<html><head></head><body style="margin: 0px; height: 100vh;"><iframe allow="fullscreen" src="${window.location.href}" style="border: none; width: 100%; height: 100%; margin: 0px;"></iframe></body></html>`; const blobm = new Blob([htmlcontb],{type:"text/html"}); const blobmurl = URL.createObjectURL(blobm); window.location.replace(blobmurl); };</script>
+          ><script>function opnmacblob() { const htmlcontb = `<html><head></head><body style="margin: 0px; height: 100vh;"><iframe allow="fullscreen" src="https://kbsigmaboy67.github.io/macvg" style="border: none; width: 100%; height: 100%; margin: 0px;"></iframe></body></html>`; const blobm = new Blob([htmlcontb],{type:"text/html"}); const blobmurl = URL.createObjectURL(blobm); window.location = blobmurl; };</script>
         </p>
         <form id="cloaker">
           <input
