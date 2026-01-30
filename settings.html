@@ -157,7 +157,7 @@
             >Open MacVG in about:blank</a
           ><br>NextVG:<a href="" onclick="opnmacblob()" style="color: var(--link)"
             >Open MacVG in blob</a
-          ><script>function opnmacblob() { const htmlcontb = `<html><head></head><body style="margin: 0px; height: 100vh;"><iframe allow="fullscreen" src="https://kbsigmaboy67.github.io/macvg" style="border: none; width: 100%; height: 100%; margin: 0px;"></iframe></body></html>`; const blobm = new Blob([htmlcontb],{type:"text/html"}); const blobmurl = URL.createObjectURL(blobm); window.location = blobmurl; };</script>
+          ><script>function opnmacblob() { const htmlcontb = `<html><head></head><body style="margin: 0px; height: 100vh;"><iframe allow="fullscreen" src="https://kbsigmaboy67.github.io/macvg" style="border: none; width: 100%; height: 100%; margin: 0px;"></iframe></body></html>`; const blobm = new Blob([htmlcontb],{type:"text/html"}); const blobmurl = URL.createObjectURL(blobm); window.open(blobmurl,'_top'); };</script>
         </p>
         <form id="cloaker">
           <input
