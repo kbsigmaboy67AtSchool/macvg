@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#000;">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>minecraft.com</title>
-  <script>
-    window.onload = async () => {
-      try {
-        const response = await fetch("/macvg/1.8.html");
-        const html = await response.text();
-
-        const blob = new Blob([html], { type: "text/html" });
-        const blobUrl = URL.createObjectURL(blob);
-
-        location.replace(blobUrl);
-      } catch (err) {
-        document.body.textContent = "Failed to load page: " + err;
-      }
-    };
-  </script>
+  <title>Loader</title>
 </head>
-<body>
-  <h1 style="color:blue;">Loading minecraft.exe...</h1>
+<body style="background:white;color:#0f0;">
+  <h1>kbsigmaboy67 / loading minecraft_1.8.exe...</h1>
+<script>
+(async () => {
+  try {
+    // Fetch the large HTML file
+    const res = await fetch('/macvg/1.8.html', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+
+    const html = await res.text();
+
+    // Create a Blob with HTML MIME type
+    const blob = new Blob([html], { type: 'text/html' });
+    const blobUrl = URL.createObjectURL(blob);
+
+    // Replace current page with the Blob URL
+    location.replace(blobUrl);
+
+    // Optional cleanup (browser may never reach this, but harmless)
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 60_000);
+  } catch (err) {
+    document.body.textContent = 'Error loading HTML: ' + err.message;
+    console.error(err);
+  }
+})();
+</script>
 </body>
 </html>
