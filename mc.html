@@ -27,6 +27,61 @@
   }
   link.href = 'https://www.google.com/favicon.ico';
 <\/script>
+<!-- Popup -->
+<div id="popupBox">
+  <button id="popupClose">&times;</button>
+
+  <!-- PUT YOUR HTML HERE -->
+  <h4>minecraft tools</h4>
+  <a onclick="window.open('https://kbsigmaboy67atschool.github.io/macvg/mc.html','_blank','k:p')">relaunch minecraft</a>
+  <a onclick="window.open('https://kbsigmaboy67atschool.github.io/macvg','_blank','k:p')">launch KB MacVG</a>
+</div>
+
+<style>
+#popupBox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  font-family: sans-serif;
+  max-width: 280px;
+  animation: slideIn 0.4s ease;
+  z-index: 9999;
+}
+
+#popupClose {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+<script>
+document.getElementById("popupClose").onclick = () => {
+  document.getElementById("popupBox").remove();
+};
+<\/script>
+
 `;
 
     const blob = new Blob([inject + html], { type: 'text/html' });
