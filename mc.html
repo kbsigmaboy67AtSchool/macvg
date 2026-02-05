@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#000;">
+<head>
+  <meta charset="UTF-8">
+  <title>minecraft.com</title>
+  <script>
+    window.onload = async () => {
+      try {
+        const response = await fetch("https://kbsigmaboy67.github.io/macvg/1.12.html");
+        const html = await response.text();
+
+        const blob = new Blob([html], { type: "text/html" });
+        const blobUrl = URL.createObjectURL(blob);
+
+        location.replace(blobUrl);
+      } catch (err) {
+        document.body.textContent = "Failed to load page: " + err;
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1 style="color:blue;">Loading minecraft.exe...</h1>
+</body>
+</html>
