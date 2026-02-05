@@ -2,27 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Loader</title>
+  <title>MineCraft_1.8 .html</title>
 </head>
-<body style="background:white;color:#0f0;">
-  <h1>kbsigmaboy67 / loading minecraft_1.8.exe...</h1>
+<body>
+  <h1 style="background:grey;color:white;"> kbsigmaboy67.isLoadingFile = MineCraft_1.8.exe...</h1>
 <script>
 (async () => {
   try {
-    // Fetch the large HTML file
     const res = await fetch('/macvg/1.8.html', { cache: 'no-store' });
     if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
 
     const html = await res.text();
 
-    // Create a Blob with HTML MIME type
-    const blob = new Blob([html], { type: 'text/html' });
+    // Script that runs inside the Blob document
+    const inject = `
+<script>
+  document.title = 'New Tab';
+
+  let link = document.querySelector("link[rel~='icon']");
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'icon';
+    document.head.appendChild(link);
+  }
+  link.href = 'https://www.google.com/favicon.ico';
+<\/script>
+`;
+
+    const blob = new Blob([inject + html], { type: 'text/html' });
     const blobUrl = URL.createObjectURL(blob);
 
-    // Replace current page with the Blob URL
     location.replace(blobUrl);
 
-    // Optional cleanup (browser may never reach this, but harmless)
     setTimeout(() => URL.revokeObjectURL(blobUrl), 60_000);
   } catch (err) {
     document.body.textContent = 'Error loading HTML: ' + err.message;
