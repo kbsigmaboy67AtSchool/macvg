@@ -3,6 +3,12 @@
 <!DOCTYPE html>
 <html style="background-color:black !impotant;">
   <head>
+    <script>
+window.addEventListener("beforeunload", e => {
+  e.preventDefault();
+  e.returnValue = "";
+});
+</script>
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5598129470490010"
@@ -411,6 +417,7 @@ async function openMCBlob(path) {
     </script>
   </body>
 </html>
+
 
 
 
